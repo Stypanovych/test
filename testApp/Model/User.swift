@@ -7,8 +7,21 @@
 
 import Foundation
 
+struct UserData: Codable, Hashable {
+    let status: String
+    let data: [String]
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        status = try container.decode(String.self, forKey: .status)
+        data = try container.decode([String].self, forKey: .data).map {
+            return String($0)
+        }
+    }
+}
 
 struct User: Codable, Hashable {
+    let id: String
     let firstName: String
     let lastName: String
     
@@ -16,4 +29,16 @@ struct User: Codable, Hashable {
     
     let gender: String
     let country: String
+    
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        id = try container.decode(String.self, forKey: .id)
+        firstName = try container.decode(String.self, forKey: .firstName)
+        lastName = try container.decode(String.self, forKey: .lastName)
+        age = try container.decode(Int.self, forKey: .age)
+        gender = try container.decode(String.self, forKey: .gender)
+        country = try container.decode(String.self, forKey: .country)
+    }
 }

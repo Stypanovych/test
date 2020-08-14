@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DCA2EE0524E5AE3A00C51E54 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE0424E5AE3A00C51E54 /* BaseAPI.swift */; };
+		DCA2EE0524E5AE3A00C51E54 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE0424E5AE3A00C51E54 /* API.swift */; };
+		DCA2EE0824E5D6D600C51E54 /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = DCA2EE0724E5D6D600C51E54 /* SwiftJWT */; };
+		DCA2EE0B24E699F600C51E54 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DCA2EE0A24E699F600C51E54 /* Alamofire */; };
+		DCA2EE0D24E69A0800C51E54 /* JWTCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE0C24E69A0800C51E54 /* JWTCreator.swift */; };
+		DCA2EE1024E6D42000C51E54 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE0E24E6D42000C51E54 /* BaseService.swift */; };
+		DCA2EE1124E6D42000C51E54 /* DataRequest+JSONJoy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE0F24E6D42000C51E54 /* DataRequest+JSONJoy.swift */; };
+		DCA2EE1424E6EF2C00C51E54 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE1324E6EF2C00C51E54 /* ProfileView.swift */; };
+		DCA2EE1624E6EFBE00C51E54 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE1524E6EFBE00C51E54 /* RowViewModel.swift */; };
+		DCA2EE1824E6F04600C51E54 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA2EE1724E6F04600C51E54 /* ProfileViewModel.swift */; };
 		DCF4876424E5A67F00AC39FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4876324E5A67F00AC39FB /* AppDelegate.swift */; };
 		DCF4876624E5A67F00AC39FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4876524E5A67F00AC39FB /* SceneDelegate.swift */; };
 		DCF4876824E5A67F00AC39FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF4876724E5A67F00AC39FB /* ContentView.swift */; };
@@ -31,7 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DCA2EE0424E5AE3A00C51E54 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		DCA2EE0424E5AE3A00C51E54 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DCA2EE0C24E69A0800C51E54 /* JWTCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTCreator.swift; sourceTree = "<group>"; };
+		DCA2EE0E24E6D42000C51E54 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		DCA2EE0F24E6D42000C51E54 /* DataRequest+JSONJoy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+JSONJoy.swift"; sourceTree = "<group>"; };
+		DCA2EE1324E6EF2C00C51E54 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DCA2EE1524E6EFBE00C51E54 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		DCA2EE1724E6F04600C51E54 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		DCF4876024E5A67F00AC39FB /* testApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF4876324E5A67F00AC39FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCF4876524E5A67F00AC39FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA2EE0824E5D6D600C51E54 /* SwiftJWT in Frameworks */,
+				DCA2EE0B24E699F600C51E54 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,9 +85,30 @@
 		DCA2EE0324E5ADC100C51E54 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				DCA2EE0424E5AE3A00C51E54 /* BaseAPI.swift */,
+				DCA2EE0E24E6D42000C51E54 /* BaseService.swift */,
+				DCA2EE0F24E6D42000C51E54 /* DataRequest+JSONJoy.swift */,
+				DCA2EE0424E5AE3A00C51E54 /* API.swift */,
+				DCA2EE0C24E69A0800C51E54 /* JWTCreator.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		DCA2EE1924E6F1FE00C51E54 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				DCA2EE1524E6EFBE00C51E54 /* RowViewModel.swift */,
+				DCF4878D24E5AB7400AC39FB /* RowView.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		DCA2EE1A24E6F20300C51E54 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DCA2EE1324E6EF2C00C51E54 /* ProfileView.swift */,
+				DCA2EE1724E6F04600C51E54 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		DCF4875724E5A67F00AC39FB = {
@@ -96,9 +133,10 @@
 			isa = PBXGroup;
 			children = (
 				DCF4878A24E5A8E500AC39FB /* Main */,
-				DCF4878524E5A74A00AC39FB /* ContentViewModel.swift */,
 				DCF4876724E5A67F00AC39FB /* ContentView.swift */,
-				DCF4878D24E5AB7400AC39FB /* RowView.swift */,
+				DCF4878524E5A74A00AC39FB /* ContentViewModel.swift */,
+				DCA2EE1A24E6F20300C51E54 /* Profile */,
+				DCA2EE1924E6F1FE00C51E54 /* Row */,
 				DCF4878924E5A8DC00AC39FB /* Model */,
 				DCA2EE0324E5ADC100C51E54 /* API */,
 				DCF4878C24E5A8FC00AC39FB /* SupportingFiles */,
@@ -167,6 +205,10 @@
 			dependencies = (
 			);
 			name = testApp;
+			packageProductDependencies = (
+				DCA2EE0724E5D6D600C51E54 /* SwiftJWT */,
+				DCA2EE0A24E699F600C51E54 /* Alamofire */,
+			);
 			productName = testApp;
 			productReference = DCF4876024E5A67F00AC39FB /* testApp.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +258,10 @@
 				Base,
 			);
 			mainGroup = DCF4875724E5A67F00AC39FB;
+			packageReferences = (
+				DCA2EE0624E5D6D600C51E54 /* XCRemoteSwiftPackageReference "Swift-JWT" */,
+				DCA2EE0924E699F600C51E54 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DCF4876124E5A67F00AC39FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -251,13 +297,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA2EE0D24E69A0800C51E54 /* JWTCreator.swift in Sources */,
 				DCF4878624E5A74A00AC39FB /* ContentViewModel.swift in Sources */,
 				DCF4878E24E5AB7400AC39FB /* RowView.swift in Sources */,
 				DCF4876424E5A67F00AC39FB /* AppDelegate.swift in Sources */,
 				DCF4876624E5A67F00AC39FB /* SceneDelegate.swift in Sources */,
+				DCA2EE1624E6EFBE00C51E54 /* RowViewModel.swift in Sources */,
+				DCA2EE1424E6EF2C00C51E54 /* ProfileView.swift in Sources */,
 				DCF4878824E5A86A00AC39FB /* User.swift in Sources */,
+				DCA2EE1124E6D42000C51E54 /* DataRequest+JSONJoy.swift in Sources */,
 				DCF4876824E5A67F00AC39FB /* ContentView.swift in Sources */,
-				DCA2EE0524E5AE3A00C51E54 /* BaseAPI.swift in Sources */,
+				DCA2EE1824E6F04600C51E54 /* ProfileViewModel.swift in Sources */,
+				DCA2EE0524E5AE3A00C51E54 /* API.swift in Sources */,
+				DCA2EE1024E6D42000C51E54 /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +572,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCA2EE0624E5D6D600C51E54 /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-JWT";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+		DCA2EE0924E699F600C51E54 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCA2EE0724E5D6D600C51E54 /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCA2EE0624E5D6D600C51E54 /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+		DCA2EE0A24E699F600C51E54 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCA2EE0924E699F600C51E54 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DCF4875824E5A67F00AC39FB /* Project object */;
 }

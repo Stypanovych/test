@@ -16,7 +16,7 @@ struct ContentView: View {
                 Button(action: {
                     
                 }) {
-                    Text(user.firstName)
+                    Text(user.id)
                 }
             }
             Text("Hello, World!")

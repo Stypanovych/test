@@ -11,13 +11,9 @@ import SwiftUI
 
 struct RowView: View {
     
+    @ObservedObject var viewModel: RowViewModel
+    
     var body: some View {
-        EmptyView()
-    }
-}
-
-struct RowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        Text(viewModel.firstName)
     }
 }
