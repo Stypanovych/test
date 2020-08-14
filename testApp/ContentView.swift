@@ -11,15 +11,19 @@ struct ContentView: View {
     @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
-        VStack {
-            ForEach(viewModel.users, id: \.self) { user in
-                Button(action: {
+        NavigationView {
+            VStack {
+                List(viewModel.users) { user in
+                    NavigationLink(
+                       destination: ProfileView(viewModel: ProfileViewModel(user: user))) {
+                         Text(user.firstName)
+                         .font(.system(size: 20))
+                         .frame(width: 200 , height: 50, alignment: .center)
+                     }
                     
-                }) {
-                    Text(user.id)
-                }
+                    Spacer()
+                }.navigationBarTitle("People")
             }
-            Text("Hello, World!")
         }
     }
 }

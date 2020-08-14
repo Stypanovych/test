@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserData: Codable, Hashable {
+struct UserDataID: Codable {
     let status: String
     let data: [String]
     
@@ -20,7 +20,18 @@ struct UserData: Codable, Hashable {
     }
 }
 
-struct User: Codable, Hashable {
+struct UserData: Codable {
+    let status: String
+    let data: User
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        status = try container.decode(String.self, forKey: .status)
+        data = try container.decode(User.self, forKey: .data)
+    }
+}
+
+struct User: Codable, Identifiable {
     let id: String
     let firstName: String
     let lastName: String
@@ -33,7 +44,7 @@ struct User: Codable, Hashable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         id = try container.decode(String.self, forKey: .id)
         firstName = try container.decode(String.self, forKey: .firstName)
         lastName = try container.decode(String.self, forKey: .lastName)

@@ -13,26 +13,38 @@ struct ProfileView: View {
     @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("First Name")
-                Text(viewModel.user.firstName)
-            }
-            HStack {
-                Text("Last Name")
-                Text(viewModel.user.lastName)
-            }
-            HStack {
-                Text("Age")
-                Text("\(viewModel.user.age)")
-            }
-            HStack {
-                Text("Gender")
-                Text(viewModel.user.gender)
-            }
-            HStack {
-                Text("Country")
-                Text(viewModel.user.country)
+        GeometryReader { geometry in
+            VStack {
+                HStack {
+                    Text("First Name")
+                    Text(self.viewModel.user.firstName)
+                }
+                .frame(minWidth: geometry.frame(in: .global).size.width,
+                       minHeight: 30)
+                HStack {
+                    Text("Last Name")
+                    Text(self.viewModel.user.lastName)
+                }
+                .frame(minWidth: geometry.frame(in: .global).size.width,
+                       minHeight: 30)
+                HStack {
+                    Text("Age")
+                    Text("\(self.viewModel.user.age)")
+                }
+                .frame(minWidth: geometry.frame(in: .global).size.width,
+                       minHeight: 30)
+                HStack {
+                    Text("Gender")
+                    Text(self.viewModel.user.gender)
+                }
+                .frame(minWidth: geometry.frame(in: .global).size.width,
+                       minHeight: 30)
+                HStack {
+                    Text("Country")
+                    Text(self.viewModel.user.country)
+                }
+                .frame(minWidth: geometry.frame(in: .global).size.width,
+                       minHeight: 30)
             }
         }
     }

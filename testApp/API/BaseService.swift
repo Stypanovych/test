@@ -73,49 +73,6 @@ class BaseService {
         }
     }
     
-    func executeDataRequest(path: String,
-                            method: HTTPMethod = .get,
-                            encoding: ParameterEncoding = JSONEncoding.default,
-                            parameters: Parameters?,
-                            headers: HTTPHeaders? = nil,
-                            completionHandler: @escaping (_ result: AFResult<Data>) -> Void) -> DataRequest {
-
-        return executeDataRequest(
-            urlString: path,
-            method: method,
-            encoding: encoding,
-            parameters: parameters,
-            headers: headers,
-            completionHandler: completionHandler
-        )
-    }
-    
-    private func executeDataRequest(urlString: String,
-                                    method: HTTPMethod,
-                                    encoding: ParameterEncoding,
-                                    parameters: Parameters?,
-                                    headers: HTTPHeaders?,
-                                    completionHandler: @escaping (_ result: AFResult<Data>) -> Void) -> DataRequest {
-        return AF.request(
-            urlString,
-            method: method,
-            parameters: parameters,
-            encoding: encoding,
-            headers: headers
-            ).responseData(completionHandler: { response in
-                self.logRequest(
-                    urlString: urlString,
-                    method: method,
-                    headers: headers,
-                    parameters: parameters,
-                    error: response.error,
-                    dataResponse: nil
-                )
-                
-                completionHandler(response.result)
-            })
-    }
-    
     
     //MARK: - Private
     

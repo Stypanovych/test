@@ -13,7 +13,7 @@ class API: BaseService {
     
     static let shared = API()
     
-    func getPeopleID(token: String, completion: @escaping (AFResult<UserData>)->Void) -> DataRequest {
+    func getPeopleID(token: String, completion: @escaping (AFResult<UserDataID>)->Void) -> DataRequest {
         let header = HTTPHeader(name: "Authorization", value: "Bearer " + token)
         let headers = HTTPHeaders([header])
         let path = "http://opn-interview-service.nn.r.appspot.com/list"
