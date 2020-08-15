@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Alamofire
 @testable import testApp
 
 class testAppTests: XCTestCase {
@@ -29,5 +30,17 @@ class testAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
 }
+
+
+//class MockAPI: APIProtocol {
+//    func getPeopleID(token: String, completion: @escaping (AFResult<UserDataID>) -> Void) -> DataRequest {
+//        
+//    }
+//    
+//    func getPeople(token: String, id: String, completion: @escaping (AFResult<UserData>) -> Void) -> DataRequest {
+//        
+//    }
+//
+//}

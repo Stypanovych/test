@@ -17,7 +17,7 @@ class ContentViewModel: ObservableObject {
     var ids = [String]() {
         didSet {
             for id in ids {
-                getPeople(id: id)
+                getPeople(api: API.shared, id: id)
             }
         }
     }
@@ -26,11 +26,11 @@ class ContentViewModel: ObservableObject {
         guard let token = JWTCreator.getJWTToken() else { return }
         self.token = token
         
-        getPeopleID()
+        getPeopleID(api: API.shared)
     }
     
-    func getPeopleID() {
-        _ = API.shared.getPeopleID(token: token) {[weak self] (user) in
+    func getPeopleID(api: APIProtocol) {
+        _ = api.getPeopleID(token: token) {[weak self] (user) in
             do {
                 self?.ids = try user.get().data
             } catch {
@@ -39,11 +39,15 @@ class ContentViewModel: ObservableObject {
         }
     }
     
-    func getPeople(id: String) {
-        _ = API.shared.getPeople(token: token,
-                             id: id) {[weak self] (user) in
+    func getPeople(api: APIProtocol, id: String) {
+        _ = api.getPeople(token: token,
+                             id: id) {[weak self] (userData) in
                                 do {
-                                    self?.users.append(try user.get().data)
+                                    guard let user = try userData.get().data else {
+                                        print(try userData.get().status)
+                                        return
+                                    }
+                                    self?.users.append(user)
                                 } catch {
                                     print("error of getting list of people")
                                 }

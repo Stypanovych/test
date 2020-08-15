@@ -14,7 +14,6 @@ struct MyClaims: Claims {
 }
 
 class JWTCreator {
-    
     static func getJWTToken() -> String? {
         let claim = MyClaims(uid: "12345", identity: "12345")
         let data = "$SECRET$".data(using: .utf8)?.base64EncodedData()

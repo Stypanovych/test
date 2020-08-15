@@ -20,7 +20,6 @@ struct ContentView: View {
                          .font(.system(size: 20))
                          .frame(width: 200 , height: 50, alignment: .center)
                      }
-                    
                     Spacer()
                 }.navigationBarTitle("People")
             }
