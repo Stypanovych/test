@@ -54,7 +54,7 @@ class API: APIProtocol {
     
     
     
-    //MARL: - Public
+    //MARK: - Private
     
     private func executeRequest<T: Codable>(urlString: String,
                                             method: HTTPMethod = .get,
@@ -91,9 +91,6 @@ class API: APIProtocol {
             }
         }
     }
-    
-    
-    //MARK: - Private
     
     private func logRequest(urlString: String,
                             method: HTTPMethod,

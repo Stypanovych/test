@@ -20,26 +20,7 @@ extension DataRequest {
         -> Self {
             
             return responseData(queue: queue) { dataResponse in
-                if let error = dataResponse.error {
-                    
-                    completionHandler(
-                        .failure(.requestError(message: error.localizedDescription))
-                    )
-                    return
-                    
-                } else if let data = dataResponse.data {
-                    guard dataResponse.response?.statusCode == 200 else {
-                        switch dataResponse.response?.statusCode {
-                        case 401:
-                            completionHandler(.failure(.serverErrorUnauthorized))
-                        case 404:
-                            completionHandler(.failure(.serverErrorNotFound))
-                        default:
-                            completionHandler(.failure(.serverError))
-                        }
-                        return
-                    }
-                    
+                if let data = dataResponse.data {
                     let decoder = JSONDecoder()
                     
                     do {
