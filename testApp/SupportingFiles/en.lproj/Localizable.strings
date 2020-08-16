@@ -8,6 +8,8 @@
 
 
 "user_navbar_title" = "Users";
+"user_nil_userids" = "Could not get users ids";
+"user_alert_dismiss" = "Okay";
 
 
 "firstname_title" = "First Name";

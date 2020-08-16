@@ -16,7 +16,7 @@ extension DataRequest {
     
     func responseCodable<T: Codable>(
         queue: DispatchQueue,
-        completionHandler: @escaping (Result<T, APIError>) -> Void)
+        completionHandler: @escaping (Result<T, Error>) -> Void)
         -> Self {
             
             return responseData(queue: queue) { dataResponse in
@@ -31,7 +31,7 @@ extension DataRequest {
                         )
                     } catch {
                         print("BaseService: error trying to convert data to JSON; error: \(error)")
-                        completionHandler(.failure(.decodingError))
+                        completionHandler(.failure(error))
                     }
                     
                 }

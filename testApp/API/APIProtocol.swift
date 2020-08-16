@@ -10,10 +10,8 @@ import Alamofire
 
 
 protocol APIProtocol {
-    func getPeopleID(token: String,
-                     completion: @escaping (Result<UserDataIDs, APIError>) -> Void) -> DataRequest
+    func getUsersIDs(completion: @escaping (Result<UserDataIDs, Error>) -> Void)
     
-    func getPeople(token: String,
-                   id: String,
-                   completion: @escaping (Result<UserData, APIError>) -> Void) -> DataRequest
+    func getUserProfile(with id: String,
+                   completion: @escaping (Result<UserData, Error>) -> Void)
 }
