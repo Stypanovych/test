@@ -12,7 +12,6 @@ import Combine
 class UsersViewModel: ObservableObject {
     
     var errorSubject = PassthroughSubject<Bool,Never>()
-//     var users = [User]()
     
     @Published var ids = [String]()
     
@@ -26,7 +25,7 @@ class UsersViewModel: ObservableObject {
     }
     
     func getUsersIDs() {
-        _ = api.getUsersIDs() {[weak self] (userResponse) in
+        api.getUsersIDs() {[weak self] (userResponse) in
             do {
                 self?.ids = try userResponse.get().data
             } catch {

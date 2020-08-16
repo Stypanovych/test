@@ -11,7 +11,7 @@ import SwiftUI
 
 struct RowView: View {
     
-    @ObservedObject var viewModel: RowViewModel
+    @ObservedObject var viewModel: ProfileViewModel
     @State var showingAlert = false
     
     var body: some View {

@@ -17,11 +17,11 @@ class ProfileViewModel: ObservableObject {
     
     init(userId: String, api: APIProtocol) {
         self.api = api
-        getUserProfile(with: userId)
+        getUserProfile(id: userId)
     }
     
-    func getUserProfile(with id: String) {
-        _ = api.getUserProfile(with: id) {[weak self] (userResponse) in
+    func getUserProfile(id: String) {
+        api.getUserProfile(with: id) {[weak self] (userResponse) in
             do {
                 guard let user = try userResponse.get().data else { return }
                 self?.user = user

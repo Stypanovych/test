@@ -17,7 +17,7 @@ struct UsersView: View {
                 List(viewModel.ids, id: \.self) { id in
                     NavigationLink(
                     destination: ProfileView(viewModel: ProfileViewModel(userId: id, api: API.shared))) {
-                        RowView(viewModel: RowViewModel(userId: id, api: API.shared))
+                        RowView(viewModel: ProfileViewModel(userId: id, api: API.shared))
                     }
                     Spacer()
                 }.navigationBarTitle("user_navbar_title".localized)
