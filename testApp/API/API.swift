@@ -22,22 +22,22 @@ class API: APIProtocol {
     func getUsersIDs(completion: @escaping (Result<UserDataIDs, Error>) -> Void) {
         let path = "http://opn-interview-service.nn.r.appspot.com/list"
         _ = executeRequest(urlString: path,
-                       method: .get,
-                       encoding: JSONEncoding.default,
-                       parameters: nil,
-                       queue: DispatchQueue.main,
-                       completionHandler: completion)
+                           method: .get,
+                           encoding: JSONEncoding.default,
+                           parameters: nil,
+                           queue: DispatchQueue.main,
+                           completionHandler: completion)
     }
     
     func getUserProfile(with id: String,
-                   completion: @escaping (Result<UserData, Error>) -> Void) {
+                        completion: @escaping (Result<UserData, Error>) -> Void) {
         let path = "http://opn-interview-service.nn.r.appspot.com/get/\(id)"
         _ = executeRequest(urlString: path,
-                       method: .get,
-                       encoding: JSONEncoding.default,
-                       parameters: nil,
-                       queue: DispatchQueue.main,
-                       completionHandler: completion)
+                           method: .get,
+                           encoding: JSONEncoding.default,
+                           parameters: nil,
+                           queue: DispatchQueue.main,
+                           completionHandler: completion)
     }
     
     static var queue = DispatchQueue(label: "api.service",

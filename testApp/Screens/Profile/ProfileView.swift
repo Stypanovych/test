@@ -9,7 +9,6 @@ import SwiftUI
 
 
 struct ProfileView: View {
-    
     @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
@@ -19,7 +18,7 @@ struct ProfileView: View {
             getView(with: "lastname_title".localized,
                     value: self.viewModel.user?.lastName)
             getView(with: "age_title".localized,
-                    value: "\(self.viewModel.user?.age)")
+                    value: "\(self.viewModel.user?.age ?? -1)")
             getView(with: "gender_title".localized,
                     value: self.viewModel.user?.gender)
             getView(with: "country_title".localized,
@@ -33,7 +32,7 @@ struct ProfileView: View {
                 GeometryReader { geometry in
                     HStack {
                         Text(title)
-                        Text(value ?? "error")
+                        Text(value ?? "data_error".localized)
                     }
                     .frame(minWidth: geometry.frame(in: .global).size.width,
                            minHeight: 20)

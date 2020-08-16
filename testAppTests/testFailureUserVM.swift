@@ -11,7 +11,7 @@ import Combine
 @testable import testApp
 
 class testFailureUserVM: XCTestCase {
-
+    
     var userViewModel: UsersViewModel!
     
     override func setUpWithError() throws {
@@ -19,11 +19,11 @@ class testFailureUserVM: XCTestCase {
         
         try super.setUpWithError()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        userViewModel = nil
     }
-
+    
     func testGetListIDs() throws {
         let promise = expectation(description: "Failure")
         
@@ -33,21 +33,9 @@ class testFailureUserVM: XCTestCase {
             promise.fulfill()
         }
         
-        _ = userViewModel.errorSubject.sink { (isError) in
-            XCTAssertTrue(isError)
-        }
-        
         wait(for: [promise], timeout: 1)
         
         XCTAssertEqual(userViewModel.ids.count, 0)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
 

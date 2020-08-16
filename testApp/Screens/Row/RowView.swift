@@ -12,23 +12,13 @@ import SwiftUI
 struct RowView: View {
     
     @ObservedObject var viewModel: ProfileViewModel
-    @State var showingAlert = false
+    @State var errorText = ""
     
     var body: some View {
         VStack {
-            Text(getTitle())
+            Text(viewModel.user?.firstName ?? errorText)
+        }.onReceive(viewModel.errorSubject) { (localizedError) in
+            self.errorText = localizedError
         }
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text(""), message: Text("user_nil_userids".localized), dismissButton: .default(Text("user_alert_dismiss".localized)))
-        }.onReceive(viewModel.errorSubject) { showAlert in
-            self.showingAlert = showAlert
-        }
-    }
-    
-    func getTitle() -> String {
-        if let firstName = viewModel.user?.firstName {
-            return firstName
-        }
-        return "error"
     }
 }

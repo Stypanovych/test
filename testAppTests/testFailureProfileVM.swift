@@ -11,7 +11,7 @@ import Combine
 @testable import testApp
 
 class testFailureProfileVM: XCTestCase {
-
+    
     var profileViewModel: ProfileViewModel!
     
     override func setUpWithError() throws {
@@ -19,11 +19,11 @@ class testFailureProfileVM: XCTestCase {
         
         try super.setUpWithError()
     }
-
+    
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        profileViewModel = nil
     }
-
+    
     func testGetListIDs() throws {
         let promise = expectation(description: "Succuss")
         
@@ -36,16 +36,5 @@ class testFailureProfileVM: XCTestCase {
         wait(for: [promise], timeout: 1)
         
         XCTAssertNil(profileViewModel.user)
-        _ = profileViewModel.errorSubject.sink { (isError) in
-            XCTAssertTrue(isError)
-        }
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

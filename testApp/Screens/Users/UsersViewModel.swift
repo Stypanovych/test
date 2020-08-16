@@ -10,9 +10,7 @@ import Combine
 
 
 class UsersViewModel: ObservableObject {
-    
     var errorSubject = PassthroughSubject<Bool,Never>()
-    
     @Published var ids = [String]()
     
     private var api: APIProtocol

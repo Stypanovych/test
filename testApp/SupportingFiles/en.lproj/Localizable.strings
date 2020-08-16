@@ -7,13 +7,22 @@
 */
 
 
+//MARK: - users view
+
 "user_navbar_title" = "Users";
 "user_nil_userids" = "Could not get users ids";
 "user_alert_dismiss" = "Okay";
 
 
+//MARK: - profile view
+
 "firstname_title" = "First Name";
-"lastname_title" = "Lase Name";
+"lastname_title" = "Last Name";
 "age_title" = "Age";
 "gender_title" = "Gender";
 "country_title" = "Country";
+
+
+//MARK: - error
+
+"data_error" = "Error of getting data";
