@@ -26,12 +26,12 @@ class API: APIProtocol {
         let headers = HTTPHeaders([header])
         let path = "http://opn-interview-service.nn.r.appspot.com/list"
         return executeRequest(urlString: path,
-                                  method: .get,
-                                  encoding: JSONEncoding.default,
-                                  parameters: nil,
-                                  headers: headers,
-                                  queue: DispatchQueue.main,
-                                  completionHandler: completion)
+                              method: .get,
+                              encoding: JSONEncoding.default,
+                              parameters: nil,
+                              headers: headers,
+                              queue: DispatchQueue.main,
+                              completionHandler: completion)
     }
     
     func getPeople(token: String, id: String,
@@ -40,12 +40,12 @@ class API: APIProtocol {
         let headers = HTTPHeaders([header])
         let path = "http://opn-interview-service.nn.r.appspot.com/get/\(id)"
         return executeRequest(urlString: path,
-                                  method: .get,
-                                  encoding: JSONEncoding.default,
-                                  parameters: nil,
-                                  headers: headers,
-                                  queue: DispatchQueue.main,
-                                  completionHandler: completion)
+                              method: .get,
+                              encoding: JSONEncoding.default,
+                              parameters: nil,
+                              headers: headers,
+                              queue: DispatchQueue.main,
+                              completionHandler: completion)
     }
     
     static var queue = DispatchQueue(label: "api.service",

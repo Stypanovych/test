@@ -16,31 +16,31 @@ struct ProfileView: View {
         GeometryReader { geometry in
             VStack {
                 HStack {
-                    Text("First Name")
+                    Text("firstname_title".localized)
                     Text(self.viewModel.user.firstName)
                 }
                 .frame(minWidth: geometry.frame(in: .global).size.width,
                        minHeight: 30)
                 HStack {
-                    Text("Last Name")
+                    Text("lastname_title".localized)
                     Text(self.viewModel.user.lastName)
                 }
                 .frame(minWidth: geometry.frame(in: .global).size.width,
                        minHeight: 30)
                 HStack {
-                    Text("Age")
+                    Text("age_title".localized)
                     Text("\(self.viewModel.user.age)")
                 }
                 .frame(minWidth: geometry.frame(in: .global).size.width,
                        minHeight: 30)
                 HStack {
-                    Text("Gender")
+                    Text("gender_title".localized)
                     Text(self.viewModel.user.gender)
                 }
                 .frame(minWidth: geometry.frame(in: .global).size.width,
                        minHeight: 30)
                 HStack {
-                    Text("Country")
+                    Text("country_title".localized)
                     Text(self.viewModel.user.country)
                 }
                 .frame(minWidth: geometry.frame(in: .global).size.width,

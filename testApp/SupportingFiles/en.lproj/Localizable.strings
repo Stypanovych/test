@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  testApp
+
+  Created by Kolya Stypanovych on 16.08.2020.
+  
+*/
+
+
+"user_navbar_title" = "Users";
+
+
+"firstname_title" = "First Name";
+"lastname_title" = "Lase Name";
+"age_title" = "Age";
+"gender_title" = "Gender";
+"country_title" = "Country";

@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  UsersViewModel.swift
 //  testApp
 //
 //  Created by Kolya Stypanovych on 13.08.2020.
@@ -8,10 +8,10 @@
 import SwiftUI
 
 
-class ContentViewModel: ObservableObject {
+class UsersViewModel: ObservableObject {
     
     @Published var users = [User]()
-
+    
     var token: String = ""
     
     var ids = [String]() {
@@ -40,17 +40,16 @@ class ContentViewModel: ObservableObject {
     }
     
     func getPeople(api: APIProtocol, id: String) {
-        _ = api.getPeople(token: token,
-                             id: id) {[weak self] (userData) in
-                                do {
-                                    guard let user = try userData.get().data else {
-                                        print(try userData.get().status)
-                                        return
-                                    }
-                                    self?.users.append(user)
-                                } catch {
-                                    print("error of getting list of people")
-                                }
+        _ = api.getPeople(token: token, id: id) {[weak self] (userData) in
+            do {
+                guard let user = try userData.get().data else {
+                    print(try userData.get().status)
+                    return
+                }
+                self?.users.append(user)
+            } catch {
+                print("error of getting list of people")
+            }
         }
     }
 }
